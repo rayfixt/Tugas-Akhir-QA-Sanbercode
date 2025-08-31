@@ -6,7 +6,7 @@ describe('Skenario Login', () => {
         //Mengisikan username yang mengharuskan diisi dengan kata "Admin"
         cy.get('[name="username"]').type('Admin').should('have.value', 'Admin')
         
-        //Mengisikan password 
+        //Mengisikan password
         cy.get('[name="password"]').type('admin123')
         
         ////Klik tombol "Login" dan sebelum klik login tombol login harus tampil terlebih dahulu

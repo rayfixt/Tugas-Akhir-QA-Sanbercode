@@ -1,13 +1,13 @@
 describe('Skenario Login', () => {
-    it('TC 001 Intercept Login',() => {
+    it('TC 010 Intercept Login Menggunakan Username Baru',() => {
         //Visit alamat website OrangeHRM
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
         //Mengisikan username yang mengharuskan diisi dengan kata "Admin"
-        cy.get('[name="username"]').type('Admin').should('have.value', 'Admin')
+        cy.get('[name="username"]').type('kevinrpratama').should('have.value', 'kevinrpratama')
         
-        //Mengisikan password yang mengharuskan diisi dengan kata "admin123"
-        cy.get('[name="password"]').type('admin123').should('have.value', 'admin123')
+        //Mengisikan password yang mengharuskan diisi dengan kata "kevin123"
+        cy.get('[name="password"]').type('kevin123').should('have.value', 'kevin123')
         
         //Intercept permintaan login
         cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/dashboard/employees/action-summary').as('loginRequest')
